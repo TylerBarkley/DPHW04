@@ -1,16 +1,25 @@
+import java.lang.Math;
+
 public class CartPoint extends Magnitude {
 
-    public CartPoint(double d){
-        this.amount = d;
+    public CartPoint(double x, double y){
+        this.x = x;
+        this.y = y;
     }
 
+    private double x;
+    private double y;
 
-    private double amount;
+    public double distance(){
+        double u = x*x;
+        double v = y*y;
+        return u+v;
+    }
 
     @Override
     public boolean lessThan(Magnitude m) {
         CartPoint tempCartPoint = (CartPoint)m;
-        if(this.amount < tempCartPoint.getAmount()){
+        if(this.distance() < tempCartPoint.distance()){
             return true;
         }
         else{
@@ -18,11 +27,4 @@ public class CartPoint extends Magnitude {
         }
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public double getAmount(){
-        return this.amount;
-    }
 }

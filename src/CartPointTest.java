@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CartPointTest {
@@ -7,10 +6,10 @@ class CartPointTest {
 
     @Test
     void test(){
-        CartPoint c = new CartPoint(100);
-        CartPoint equalc = new CartPoint(100);
-        CartPoint lessc = new CartPoint(25);
-        CartPoint greaterc = new CartPoint(15000);
+        CartPoint c = new CartPoint(100,100);
+        CartPoint equalc = new CartPoint(100,100);
+        CartPoint lessc = new CartPoint(25,25);
+        CartPoint greaterc = new CartPoint(125,125);
 
         //lessThan
         assertTrue(c.lessThan(greaterc));
